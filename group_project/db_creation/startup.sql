@@ -1,3 +1,5 @@
+DROP TABLE Users;
+
 CREATE TABLE Users(int userID, varchar(50) name, int phoneNumber, varchar())
 
 Create Table Users (
@@ -10,3 +12,5 @@ Create Table Users (
   CONSTRAINT USER_PK PRIMARY KEY (User_ID),
   CONSTRAINT UserName_Unique UNIQUE (Username)
 );
+
+INSERT INTO Users VALUES (1, 'user_name', 'user', '123', 123, 'user@mail.com');
