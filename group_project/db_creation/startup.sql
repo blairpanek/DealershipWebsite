@@ -30,6 +30,7 @@ Create Table Vehicles (
 
 Create Table Dealerships (
   Dealership_ID int NOT NULL,
+
   Name VARCHAR(50) NOT NULL,
   Location VARCHAR(50) NOT NULL,
 
@@ -60,10 +61,17 @@ Create Table DealershipVehicleConnection (
   Dealership_ID int NOT NULL,
   Vehicle_ID int NOT NULL,
 
+  Price VARCHAR(7) NOT NULL,
+
   CONSTRAINT DealershipVehicleConnection_PK PRIMARY KEY (DealershipVehicleConnection_ID),
 
-  CONSTRAINT Dealership_FK FOREIGN KEY (Dealership_ID) REFERENCES Dealership_PK(Dealership_ID),
-  CONSTRAINT Vehicle_FK FOREIGN KEY (Vehicle_ID) REFERENCES Vehicles(Vehicle_ID)
+  CONSTRAINT Dealership_FK
+    FOREIGN KEY (Dealership_ID)
+    REFERENCES Dealership_PK(Dealership_ID),
+
+  CONSTRAINT Vehicle_FK
+    FOREIGN KEY (Vehicle_ID)
+    REFERENCES Vehicles(Vehicle_ID)
 );
 
 Create Table UserPayments (
@@ -74,9 +82,17 @@ Create Table UserPayments (
 
   CONSTRAINT UserPayments_PK PRIMARY KEY (UserPayments_ID),
 
-  CONSTRAINT Vehicle_FK FOREIGN KEY (Vehicle_ID) REFERENCES Vehicles(Vehicle_ID),
-  CONSTRAINT USER_FK FOREIGN KEY (User_ID) REFERENCES Users(User_ID),
-  CONSTRAINT Dealership_FK FOREIGN KEY (Dealership_ID) REFERENCES Dealerships(Dealership_ID)
+  CONSTRAINT Vehicle_FK
+    FOREIGN KEY (Vehicle_ID)
+    REFERENCES Vehicles(Vehicle_ID),
+
+  CONSTRAINT USER_FK
+    FOREIGN KEY (User_ID)
+    REFERENCES Users(User_ID),
+
+  CONSTRAINT Dealership_FK
+    FOREIGN KEY (Dealership_ID) REFERENCES
+    Dealerships(Dealership_ID)
 );
 
 INSERT INTO Users VALUES (1, 'user_name', 'user', '123', 123, 'user@mail.com');
