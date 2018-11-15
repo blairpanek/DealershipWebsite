@@ -43,10 +43,10 @@ Create Table DealershipUsers (
 
   Name VARCHAR(50) NOT NULL,
   Address VARCHAR(50) NOT NULL,
-  PhoneNumber VARCHAR(12),
-  Username VARCHAR(50),
-  Password VARCHAR(50),
-  Email VARCHAR(50),
+  PhoneNumber VARCHAR(12) NOT NULL,
+  Username VARCHAR(50) NOT NULL,
+  Password VARCHAR(50) NOT NULL,
+  Email VARCHAR(50) NOT NULL,
 
   CONSTRAINT DealershipUsers_PK PRIMARY KEY (DealershipUsers_ID),
 
