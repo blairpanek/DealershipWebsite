@@ -38,7 +38,9 @@ Create Table Dealerships (
 
 Create Table DealershipUsers (
   DealershipUsers_ID int NOT NULL,
+
   Dealership_ID int NOT NULL,
+
   Name VARCHAR(50) NOT NULL,
   Address VARCHAR(50) NOT NULL,
   PhoneNumber VARCHAR(12),
@@ -48,7 +50,9 @@ Create Table DealershipUsers (
 
   CONSTRAINT DealershipUsers_PK PRIMARY KEY (DealershipUsers_ID),
 
-  CONSTRAINT Dealership_FK FOREIGN KEY (Dealership_ID) REFERENCES Dealerships(Dealership_ID)
+  CONSTRAINT Dealership_FK
+    FOREIGN KEY (Dealership_ID)
+    REFERENCES Dealerships(Dealership_ID)
 );
 
 Create Table DealershipVehicleConnection (
