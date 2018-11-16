@@ -37,11 +37,6 @@ body {
 <body>
   <div class="container">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">Navbar</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
@@ -82,15 +77,21 @@ body {
         Get your great deals today at DealershipExpo!
       </p>
       <hr class="my-4">
-      <p>
-        Don't wait, shop now
-      </p>
-      <a class="btn btn-primary btn-lg" href="#" role="button">
-        View Dealerships
-      </a>
+      <div class="row">
+        <div class="col-5">
+          <p>
+            Don't wait, shop now
+          </p>
+          <a class="btn btn-primary" href="#" role="button">
+            View Dealerships
+          </a>
+        </div>
+        <div class="col-1"> </div>
+        <div class="col-6">
+          <img class="img-fluid" src="https://c.pxhere.com/photos/8c/a1/road_car_vehicle_transportation_automobile_car_road_car_on_road_drive-495245.jpg!d">
+        </div>
+      </div>
     </div>
-
-    <img class="img-fluid" src="https://c.pxhere.com/photos/8c/a1/road_car_vehicle_transportation_automobile_car_road_car_on_road_drive-495245.jpg!d">
   </div>
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
