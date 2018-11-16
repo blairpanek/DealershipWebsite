@@ -78,7 +78,7 @@ body {
       </p>
       <hr class="my-4">
       <div class="row">
-        <div class="col-5 col-xs-12 col-sm-12">
+        <div class="col-5 col-sm-12">
           <p>
             Don't wait, shop now
           </p>
@@ -86,8 +86,8 @@ body {
             View Dealerships
           </a>
         </div>
-        <div class="col-1 col-xs-0 col-sm-0"> </div>
-        <div class="col-6 col-xs-12 col-sm-12">
+        <div class="col- col-sm-0"> </div>
+        <div class="col-6 col-sm-12">
           <img class="img-fluid" src="https://c.pxhere.com/photos/8c/a1/road_car_vehicle_transportation_automobile_car_road_car_on_road_drive-495245.jpg!d">
         </div>
       </div>
