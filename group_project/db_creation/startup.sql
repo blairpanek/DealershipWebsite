@@ -64,6 +64,6 @@ Create Table UserPayments (
 
 INSERT INTO Users VALUES (1, 'user_name', 'user', '123', 123, 'user@mail.com');
 
-INSERT INTO Dealerships (1, 'Dealer X', 'Fargo, ND');
-INSERT INTO Dealerships (2, 'Dealer Y', 'Fargo, ND');
-INSERT INTO Dealerships (3, 'Dealer Z', 'Fargo, ND');
+INSERT INTO Dealerships VALUES (1, 'Dealer X', 'Fargo, ND');
+INSERT INTO Dealerships VALUES (2, 'Dealer Y', 'Fargo, ND');
+INSERT INTO Dealerships VALUES (3, 'Dealer Z', 'Fargo, ND');
