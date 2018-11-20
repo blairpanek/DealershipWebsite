@@ -18,8 +18,8 @@ while (($row = oci_fetch_array($stid, OCI_BOTH)) != false) {
     echo 'Mileage: ' . $row[5];
     echo '<br />';
     echo 'Price: '   . $row[6];
+    echo "<a class=\"btn btn-primary\" href=\"handle_payment.php\" role=\"button\"> Add to Watchlist </a>";
     echo '<hr />';
-    echo "<button type=\"button\" class=\"btn btn-primary\"> Buy Now! </button>";
 }
 
 oci_free_statement($stid);

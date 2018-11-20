@@ -46,12 +46,12 @@ Create Table DealershipUsers (
   FOREIGN KEY (Dealership_ID) REFERENCES Dealerships(Dealership_ID)
 );
 
-Create Table UserPayments (
-  UserPayments_ID int NOT NULL,
+Create Table UserVehicleWatchlist (
+  UserVehicleWatchlist_ID int NOT NULL,
   Vehicle_ID int NOT NULL,
   User_ID int NOT NULL,
   Dealership_ID int NOT NULL,
-  PRIMARY KEY (UserPayments_ID),
+  PRIMARY KEY (UserVehicleWatchlist_ID),
   FOREIGN KEY (Vehicle_ID)
     REFERENCES Vehicles(Vehicle_ID),
   FOREIGN KEY (User_ID)
