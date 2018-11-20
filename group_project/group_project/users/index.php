@@ -43,7 +43,7 @@
           <p>
             Don't wait, shop now
           </p>
-          <a class="btn btn-primary" href="dealerships.php" role="button">
+          <a class="btn btn-primary" href="dealership.php" role="button">
             View Dealerships
           </a>
         </div>
