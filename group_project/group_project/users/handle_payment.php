@@ -4,24 +4,9 @@ $conn = oci_connect('coelhard', 'Jan211999', '(DESCRIPTION=(ADDRESS_LIST=(ADDRES
 
 $dealership_id = $_GET["dealership_id"];
 
-$query = "select * FROM Vehicles WHERE Dealership_ID = " . $dealership_id;
+$query = "INSERT INTO UserVehicleWatchlist VALUES (" . $PK_ID . "," . $vehcle_id . "," . $user_id . "," . $dealership_id . ")";
 $stid = oci_parse($conn, $query);
 oci_execute($stid);
-
-while (($row = oci_fetch_array($stid, OCI_BOTH)) != false) {
-    echo 'Color: '   . $row[2];
-    echo '<br />';
-    echo 'Model: '   . $row[3];
-    echo '<br />';
-    echo 'Year: '    . $row[4];
-    echo '<br />';
-    echo 'Mileage: ' . $row[5];
-    echo '<br />';
-    echo 'Price: '   . $row[6];
-    echo '<br />';
-    echo "<a class=\"btn btn-primary\" href=\"handle_payment.php\" role=\"button\"> Add to Watchlist </a>";
-    echo '<hr />';
-}
 
 oci_free_statement($stid);
 oci_close($conn);
