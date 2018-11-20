@@ -13,6 +13,12 @@ Create Table Users (
   Email VARCHAR(50) NOT NULL,
   PRIMARY KEY (User_ID));
 
+Create Table Dealerships (
+  Dealership_ID int NOT NULL,
+  Name VARCHAR(50) NOT NULL,
+  Location VARCHAR(50) NOT NULL,
+  PRIMARY KEY (Dealership_ID));
+
 Create Table Vehicles (
   Vehicle_ID int NOT NULL,
   Dealership_ID int NOT NULL,
@@ -26,12 +32,6 @@ Create Table Vehicles (
   PRIMARY KEY (Vehicle_ID),
   FOREIGN KEY (Dealership_ID) REFERENCES Dealerships(Dealership_ID),
 );
-
-Create Table Dealerships (
-  Dealership_ID int NOT NULL,
-  Name VARCHAR(50) NOT NULL,
-  Location VARCHAR(50) NOT NULL,
-  PRIMARY KEY (Dealership_ID));
 
 Create Table DealershipUsers (
   DealershipUsers_ID int NOT NULL,
