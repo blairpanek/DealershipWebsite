@@ -1,6 +1,6 @@
 DROP TABLE Users CASCADE CONSTRAINTS;
 DROP TABLE Dealerships CASCADE CONSTRAINTS;
-DROP TABLE Vehicles;
+DROP TABLE Vehicles CASCADE CONSTRAINTS;
 DROP TABLE DealershipUsers CASCADE CONSTRAINTS;
 DROP TABLE UserPayments CASCADE CONSTRAINTS;
 
@@ -32,7 +32,7 @@ Create Table Vehicles (
   Price int NOT NULL,
 
   PRIMARY KEY (Vehicle_ID),
-  FOREIGN KEY (Dealership_ID) REFERENCES Dealerships(Dealership_ID),
+  FOREIGN KEY (Dealership_ID) REFERENCES Dealerships(Dealership_ID)
 );
 
 Create Table DealershipUsers (
