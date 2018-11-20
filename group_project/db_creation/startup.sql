@@ -67,3 +67,7 @@ INSERT INTO Users VALUES (1, 'user_name', 'user', '123', 123, 'user@mail.com');
 INSERT INTO Dealerships VALUES (1, 'Dealer X', 'Fargo, ND');
 INSERT INTO Dealerships VALUES (2, 'Dealer Y', 'Fargo, ND');
 INSERT INTO Dealerships VALUES (3, 'Dealer Z', 'Fargo, ND');
+
+INSERT INTO Vehicles VALUES (1, 'blue', 'Ford Escape', '1999', '120000');
+
+INSERT INTO DealershipVehicleConnection VALUES (1, 1, 1, 500);
