@@ -16,11 +16,17 @@ Create Table Users (
 
 Create Table Vehicles (
   Vehicle_ID int NOT NULL,
+  Dealership_ID int NOT NULL,
+
   Color VARCHAR(50) NOT NULL,
   Model VARCHAR(50) NOT NULL,
   Year VARCHAR(50) NOT NULL,
   Mileage VARCHAR(50) NOT NULL,
-  PRIMARY KEY (Vehicle_ID));
+  Price int NOT NULL,
+
+  PRIMARY KEY (Vehicle_ID),
+  FOREIGN KEY (Dealership_ID) REFERENCES Dealerships(Dealership_ID),
+);
 
 Create Table Dealerships (
   Dealership_ID int NOT NULL,
@@ -39,15 +45,6 @@ Create Table DealershipUsers (
   Email VARCHAR(50) NOT NULL,
   PRIMARY KEY (DealershipUsers_ID),
     FOREIGN KEY (Dealership_ID) REFERENCES Dealerships(Dealership_ID));
-
-Create Table DealershipVehicleConnection (
-  DealershipVehicleConnection_ID int NOT NULL,
-  Dealership_ID int NOT NULL,
-  Vehicle_ID int NOT NULL,
-  Price VARCHAR(7) NOT NULL,
-  PRIMARY KEY (DealershipVehicleConnection_ID),
-    FOREIGN KEY (Dealership_ID) REFERENCES Dealerships(Dealership_ID),
-    FOREIGN KEY (Vehicle_ID) REFERENCES Vehicles(Vehicle_ID));
 
 Create Table UserPayments (
   UserPayments_ID int NOT NULL,
@@ -68,6 +65,4 @@ INSERT INTO Dealerships VALUES (1, 'Dealer X', 'Fargo, ND');
 INSERT INTO Dealerships VALUES (2, 'Dealer Y', 'Fargo, ND');
 INSERT INTO Dealerships VALUES (3, 'Dealer Z', 'Fargo, ND');
 
-INSERT INTO Vehicles VALUES (1, 'blue', 'Ford Escape', '1999', '120000');
-
-INSERT INTO DealershipVehicleConnection VALUES (1, 1, 1, 500);
+INSERT INTO Vehicles VALUES (1, 1, 'Blue', 'Ford Eclipse', '2017', '120000', 1500);
