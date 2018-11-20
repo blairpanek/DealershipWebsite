@@ -18,6 +18,7 @@ Create Table Dealerships (
   Dealership_ID int NOT NULL,
   Name VARCHAR(50) NOT NULL,
   Location VARCHAR(50) NOT NULL,
+
   PRIMARY KEY (Dealership_ID)
 );
 
@@ -29,7 +30,7 @@ Create Table Vehicles (
   Model VARCHAR(50) NOT NULL,
   Year VARCHAR(50) NOT NULL,
   Mileage VARCHAR(50) NOT NULL,
-  Price int NOT NULL,
+  Price VARCHAR(50) NOT NULL,
 
   PRIMARY KEY (Vehicle_ID),
   FOREIGN KEY (Dealership_ID) REFERENCES Dealerships(Dealership_ID)
@@ -71,4 +72,4 @@ INSERT INTO Dealerships VALUES (1, 'Dealer X', 'Fargo, ND');
 INSERT INTO Dealerships VALUES (2, 'Dealer Y', 'Fargo, ND');
 INSERT INTO Dealerships VALUES (3, 'Dealer Z', 'Fargo, ND');
 
-INSERT INTO Vehicles VALUES (1, 1, 'Blue', 'Ford Eclipse', '2017', '120000', 1500);
+INSERT INTO Vehicles VALUES (1, 1, 'Blue', 'Ford Eclipse', '2017', '120000', '1500');
