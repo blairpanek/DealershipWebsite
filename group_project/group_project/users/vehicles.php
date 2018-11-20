@@ -9,6 +9,7 @@ oci_execute($stid);
 
 echo $dealership_id;
 
+
 while (($row = oci_fetch_array($stid, OCI_BOTH)) != false) {
     echo "<a href=\"vehicles.php?dealership_id=" . $row[0] . "\">" . $row[1] . "</a>";
     echo "<hr />";
