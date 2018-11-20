@@ -7,9 +7,7 @@ $stid = oci_parse($conn, $query);
 oci_execute($stid);
 
 while (($row = oci_fetch_array($stid, OCI_BOTH)) != false) {
-    echo $row['Dealership_ID'];
-    echo $row[0];
-    echo "<a href=\"vehicles/?dealership_id=" . $row['Dealership_ID'] . "\">" . $row['Name'] . "</a>";
+    echo "<a href=\"vehicles/?dealership_id=" . $row[0] . "\">" . $row[1] . "</a>";
 }
 
 // while ($row = oci_fetch_array($stid, OCI_ASSOC+OCI_RETURN_NULLS)) {
