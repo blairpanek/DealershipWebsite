@@ -9,7 +9,7 @@ oci_execute($stid);
 while ($row = oci_fetch_array($stid, OCI_ASSOC+OCI_RETURN_NULLS)) {
     for ($x = 0; $x < count($row); $x++) {
       echo "<a href=\"vehicles/?dealership_id=" . $row[0] . "\">" . $row[1] . "</a>";
-      echo $row;
+      echo count($row);
     }
     echo "<br />";
 }
