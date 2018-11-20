@@ -6,14 +6,17 @@ $query = "select * from Dealerships";
 $stid = oci_parse($conn, $query);
 oci_execute($stid);
 
-while ($row = oci_fetch_array($stid, OCI_BOTH)) {
-    for ($x = 0; $x < count($row); $x++) {
-      echo "<a href=\"vehicles/?dealership_id=" . $row['Dealership_ID'] . "\">" . $row['Name'] . "</a>";
-      echo $row['Name'];
-      echo $row;
-    }
-    echo "<br />";
+while (($row = oci_fetch_array($stid, OCI_BOTH)) != false) {
+    echo "<a href=\"vehicles/?dealership_id=" . $row['Dealership_ID'] . "\">" . $row['Name'] . "</a>";
 }
+
+// while ($row = oci_fetch_array($stid, OCI_ASSOC+OCI_RETURN_NULLS)) {
+//     for ($x = 0; $x < count($row); $x++) {
+//       echo "<a href=\"vehicles/?dealership_id=" . $row['Dealership_ID'] . "\">" . $row['Name'] . "</a>";
+//       echo $row['Name'];
+//     }
+//     echo "<br />";
+// }
 
 oci_free_statement($stid);
 oci_close($conn);
