@@ -8,6 +8,7 @@ oci_execute($stid);
 
 while ($row = oci_fetch_array($stid, OCI_ASSOC+OCI_RETURN_NULLS)) {
     for ($x = 0; $x < count($row); $x++) {
+      echo '<a href="' . $row[0] . '">Link text</a>';
       echo "<a href=\"vehicles/?dealership_id=" . $row[0] . "\">" . $row[1] . "</a>";
       echo '<a href="http://www.website.com/page.html">Click here</a>';
       echo $x;
