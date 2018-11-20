@@ -51,12 +51,13 @@ Create Table UserPayments (
   User_ID int NOT NULL,
   Dealership_ID int NOT NULL,
   PRIMARY KEY (UserPayments_ID),
-    FOREIGN KEY (Vehicle_ID)
+  FOREIGN KEY (Vehicle_ID)
     REFERENCES Vehicles(Vehicle_ID),
-    FOREIGN KEY (User_ID)
+  FOREIGN KEY (User_ID)
     REFERENCES Users(User_ID),
-    FOREIGN KEY (Dealership_ID) REFERENCES
-    Dealerships(Dealership_ID));
+  FOREIGN KEY (Dealership_ID)
+    REFERENCES Dealerships(Dealership_ID)
+  );
 
 INSERT INTO Users VALUES (1, 'user_name', 'user', '123', 123, 'user@mail.com');
 
