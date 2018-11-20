@@ -1,6 +1,6 @@
 DROP TABLE Users CASCADE CONSTRAINTS;
 DROP TABLE Dealerships CASCADE CONSTRAINTS;
-DROP TABLE Vehicles CASCADE CONSTRAINTS;
+DROP TABLE Vehicles;
 DROP TABLE DealershipUsers CASCADE CONSTRAINTS;
 DROP TABLE UserPayments CASCADE CONSTRAINTS;
 
@@ -11,13 +11,15 @@ Create Table Users (
   Password VARCHAR(50) NOT NULL,
   PhoneNumber int NOT NULL,
   Email VARCHAR(50) NOT NULL,
-  PRIMARY KEY (User_ID));
+  PRIMARY KEY (User_ID)
+);
 
 Create Table Dealerships (
   Dealership_ID int NOT NULL,
   Name VARCHAR(50) NOT NULL,
   Location VARCHAR(50) NOT NULL,
-  PRIMARY KEY (Dealership_ID));
+  PRIMARY KEY (Dealership_ID)
+);
 
 Create Table Vehicles (
   Vehicle_ID int NOT NULL,
@@ -42,22 +44,26 @@ Create Table DealershipUsers (
   Username VARCHAR(50) NOT NULL,
   Password VARCHAR(50) NOT NULL,
   Email VARCHAR(50) NOT NULL,
+
   PRIMARY KEY (DealershipUsers_ID),
-    FOREIGN KEY (Dealership_ID) REFERENCES Dealerships(Dealership_ID));
+  FOREIGN KEY (Dealership_ID) REFERENCES Dealerships(Dealership_ID)
+);
 
 Create Table UserPayments (
   UserPayments_ID int NOT NULL,
   Vehicle_ID int NOT NULL,
   User_ID int NOT NULL,
   Dealership_ID int NOT NULL,
+
   PRIMARY KEY (UserPayments_ID),
+
   FOREIGN KEY (Vehicle_ID)
     REFERENCES Vehicles(Vehicle_ID),
   FOREIGN KEY (User_ID)
     REFERENCES Users(User_ID),
   FOREIGN KEY (Dealership_ID)
     REFERENCES Dealerships(Dealership_ID)
-  );
+);
 
 INSERT INTO Users VALUES (1, 'user_name', 'user', '123', 123, 'user@mail.com');
 
