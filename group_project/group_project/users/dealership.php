@@ -6,10 +6,8 @@ $query = "select * from Dealerships";
 $stid = oci_parse($conn, $query);
 oci_execute($stid);
 
-
 while ($row = oci_fetch_array($stid, OCI_ASSOC+OCI_RETURN_NULLS)) {
-    foreach ($x = 0; $x < $row.count(); $x++)
-    {
+    for ($x = 0; $x < $row.count(); $x++) {
       echo "<a href=\"vehicles/?dealership_id=" . $row[0] . "\"></a>";
     }
     echo "<br />";
