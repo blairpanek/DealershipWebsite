@@ -20,9 +20,8 @@ if ($user_count == 1) {
   session_start();
   $_SESSION["username"] = $username;
   header('Location: index.php');
-}
-else{
-  echo "Invalid username and password. Go Back!"
+} else {
+  echo "Invalid username and password. Go Back!";
 }
 
 oci_free_statement($stid);
