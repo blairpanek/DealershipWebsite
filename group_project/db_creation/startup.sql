@@ -59,7 +59,7 @@ Create Table UserVehicleWatchlist (
     REFERENCES Dealerships(Dealership_ID)
 );
 
-INSERT INTO Users VALUES ('user_name', 'user', '123', 123, 'user@mail.com');
+INSERT INTO Users VALUES ('user', 'user', '123', 123, 'user@mail.com');
 INSERT INTO Dealerships VALUES (1, 'Dealer X', 'Fargo, ND');
 INSERT INTO Dealerships VALUES (2, 'Dealer Y', 'Fargo, ND');
 INSERT INTO Dealerships VALUES (3, 'Dealer Z', 'Fargo, ND');
