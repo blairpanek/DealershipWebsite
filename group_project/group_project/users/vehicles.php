@@ -19,7 +19,7 @@ while (($row = oci_fetch_array($stid, OCI_BOTH)) != false) {
     echo '<br />';
     echo 'Price: '   . $row[6];
     echo '<br />';
-    echo "<a class=\"btn btn-primary\" href=\"handle_payment.php\" role=\"button\"> Add to Watchlist </a>";
+    echo "<a class=\"btn btn-primary\" href=\"handle_add_to_watchlist.php\" role=\"button\"> Add to Watchlist </a>";
     echo '<hr />';
 }
 
