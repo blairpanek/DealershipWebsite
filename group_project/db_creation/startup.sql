@@ -6,7 +6,7 @@ DROP TABLE UserPayments CASCADE CONSTRAINTS;
 
 Create Table Users (
   Name VARCHAR(50) NOT NULL,
-  UserName VARCHAR(50) NOT,
+  UserName VARCHAR(50) NOT NULL,
   Password VARCHAR(50) NOT NULL,
   PhoneNumber int NOT NULL,
   Email VARCHAR(50) NOT NULL,
