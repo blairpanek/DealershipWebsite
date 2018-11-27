@@ -7,10 +7,13 @@ $user_email = $_GET["user_email"];
 $vehicle_id = $_GET["vehicle_id"];
 
 $combination_id = $dealership_id . $user_email . $vehicle_id;
+echo '<br />';
 echo $combination_id;
-
+echo '<br />';
 echo $dealership_id;
+echo '<br />';
 echo $user_email;
+echo '<br />';
 echo $vehicle_id;
 
 $query = "INSERT INTO UserVehicleWatchlist (" . $combination_id . ", " . $vehicle_id .", " . $user_email . ", " . $dealership_id . ") VALUES ( '" . $combination_id . "' , '" . $vehcle_id . "' , '" . $user_id . "' , '" . $dealership_id . "' )";
