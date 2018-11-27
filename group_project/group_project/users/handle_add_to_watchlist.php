@@ -19,9 +19,7 @@ $query = "INSERT INTO UserVehicleWatchlist VALUES ( '{$combination_id}' , {$vehc
 
 $stid = oci_parse($conn, $query);
 
-$execute_flag = oci_execute($stid);
-echo '<br />';
-echo $execute_flag;
+oci_execute($stid);
 
 oci_free_statement($stid);
 oci_close($conn);
