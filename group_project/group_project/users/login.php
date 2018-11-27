@@ -8,5 +8,7 @@
       Password: <input type="text" name="password"><br>
       <input type="submit">
     </form>
+    <br>
+    <button onclick="location.href = 'http://students.cs.ndsu.nodak.edu/~blpanek/CSCI366/DealershipWebsite/group_project/group_project/users/AddUser.php';" id= "myButton" class= "float-left submit-button" > New User</button>
   </body>
 </html>
