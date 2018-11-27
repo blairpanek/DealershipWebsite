@@ -6,7 +6,7 @@ $dealership_id = $_GET["dealership_id"];
 $user_email = $_GET["user_email"];
 $vehicle_id = $_GET["vehicle_id"];
 
-echo (string)$dealership_id;
+echo (string)$dealership_id . (string)$user_email;
 echo '<br  />';
 $combination_id = intval((string)$dealership_id . (string)$user_email . (string)$vehicle_id);
 echo $combination_id;
