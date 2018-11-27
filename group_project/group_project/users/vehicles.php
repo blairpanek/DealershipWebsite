@@ -3,6 +3,7 @@
 $conn = oci_connect('coelhard', 'Jan211999', '(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(Host=db2.ndsu.edu)(Port=1521)))(CONNECT_DATA=(SID=cs)))');
 
 $dealership_id = $_GET["dealership_id"];
+$user_email = "user@mail.com";
 
 $query = "select * FROM Vehicles WHERE Dealership_ID = " . $dealership_id;
 $stid = oci_parse($conn, $query);
@@ -19,7 +20,7 @@ while (($row = oci_fetch_array($stid, OCI_BOTH)) != false) {
     echo '<br />';
     echo 'Price: '   . $row[6];
     echo '<br />';
-    echo "<a class=\"btn btn-primary\" href=\"handle_add_to_watchlist.php?dealership_id=$dealership_id\" role=\"button\"> Add to Watchlist </a>";
+    echo "<a class=\"btn btn-primary\" href=\"handle_add_to_watchlist.php?dealership_id=$dealership_id?user_email=$user_email\" role=\"button\"> Add to Watchlist </a>";
     echo '<hr />';
 }
 
