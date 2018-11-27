@@ -9,9 +9,9 @@ $stid = oci_parse($conn, $query);
 oci_execute($stid);
 
 $user_count;
-while ($row = oci_fetch_array($stid, OCI_BOTH)) {
+while ($row = oci_fetch_array($stid, OCI_ASSOC+OCI_RETURN_NULLS)) {
     foreach ($row as $item) {
-        $user_count = $item[0];
+        $user_count = $item;
     }
 }
 echo $user_count;
