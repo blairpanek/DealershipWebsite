@@ -1,3 +1,11 @@
+<?php
+if(!(session_id() == '' || !isset($_SESSION))) {
+  // session isn't started
+  session_start();
+}
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -33,7 +41,14 @@
     <hr />
 
     <div class="jumbotron">
-      <h1 class="display-4">Welcome Customers! </h1>
+      <?php
+      if (isset($_SESSION["username"])) {
+        echo "<h1 class=\"display-4\">Welcome" . $_SESSION["username"] . "</h1>"
+      } else {
+        echo "<h1 class=\"display-4\">Welcome Customers! </h1>"
+      }
+
+      ?>
       <p class="lead">
         Get your great deals today at DealershipExpo!
       </p>

@@ -9,7 +9,7 @@ $stid = oci_parse($conn, $query);
 oci_execute($stid);
 
 $user_count;
-while ($row = oci_fetch_array($stid, OCI_ASSOC+OCI_RETURN_NULLS)) {
+while ($row = oci_fetch_array($stid, OCI_BOTH)) {
     foreach ($row as $item) {
         $user_count = $item;
     }
@@ -17,11 +17,17 @@ while ($row = oci_fetch_array($stid, OCI_ASSOC+OCI_RETURN_NULLS)) {
 echo $user_count;
 
 if ($user_count == 1) {
+  session_start();
+  $_SESSION["username"] = $username;
   header('Location: index.php');
+}
+else{
+  echo "Invalid username and password. Go Back!"
 }
 
 oci_free_statement($stid);
 oci_close($conn);
+
 ?>
 
 <html lang="en" dir="ltr">
