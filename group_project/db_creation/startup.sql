@@ -5,13 +5,12 @@ DROP TABLE DealershipUsers CASCADE CONSTRAINTS;
 DROP TABLE UserPayments CASCADE CONSTRAINTS;
 
 Create Table Users (
-  User_ID int NOT NULL,
   Name VARCHAR(50) NOT NULL,
   UserName VARCHAR(50) NOT NULL UNIQUE,
   Password VARCHAR(50) NOT NULL,
   PhoneNumber int NOT NULL,
   Email VARCHAR(50) NOT NULL,
-  PRIMARY KEY (User_ID)
+  PRIMARY KEY (UserName)
 );
 
 Create Table Dealerships (
@@ -55,12 +54,12 @@ Create Table UserVehicleWatchlist (
   FOREIGN KEY (Vehicle_ID)
     REFERENCES Vehicles(Vehicle_ID),
   FOREIGN KEY (User_ID)
-    REFERENCES Users(User_ID),
+    REFERENCES Users(UserName),
   FOREIGN KEY (Dealership_ID)
     REFERENCES Dealerships(Dealership_ID)
 );
 
-INSERT INTO Users VALUES (1, 'user_name', 'user', '123', 123, 'user@mail.com');
+INSERT INTO Users VALUES ('user_name', 'user', '123', 123, 'user@mail.com');
 INSERT INTO Dealerships VALUES (1, 'Dealer X', 'Fargo, ND');
 INSERT INTO Dealerships VALUES (2, 'Dealer Y', 'Fargo, ND');
 INSERT INTO Dealerships VALUES (3, 'Dealer Z', 'Fargo, ND');
