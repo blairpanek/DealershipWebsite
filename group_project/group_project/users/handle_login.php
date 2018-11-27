@@ -11,7 +11,7 @@ oci_execute($stid);
 $user_count;
 while ($row = oci_fetch_array($stid, OCI_BOTH)) {
     foreach ($row as $item) {
-        $user_count = $item;
+        $user_count = $item[0];
     }
 }
 echo $user_count;
