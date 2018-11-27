@@ -10,6 +10,7 @@ $stid = oci_parse($conn, $query);
 oci_execute($stid);
 
 while (($row = oci_fetch_array($stid, OCI_BOTH)) != false) {
+    $vehicle_id = $row[0];
     echo 'Color: '   . $row[2];
     echo '<br />';
     echo 'Model: '   . $row[3];
@@ -20,7 +21,7 @@ while (($row = oci_fetch_array($stid, OCI_BOTH)) != false) {
     echo '<br />';
     echo 'Price: '   . $row[6];
     echo '<br />';
-    echo "<a class=\"btn btn-primary\" href=\"handle_add_to_watchlist.php?dealership_id=$dealership_id&user_email=$user_email\" role=\"button\"> Add to Watchlist </a>";
+    echo "<a class=\"btn btn-primary\" href=\"handle_add_to_watchlist.php?dealership_id=$dealership_id&user_email=$user_email&vehicle_id=$vehicle_id\" role=\"button\"> Add to Watchlist </a>";
     echo '<hr />';
 }
 

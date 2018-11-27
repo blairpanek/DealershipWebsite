@@ -4,9 +4,11 @@ $conn = oci_connect('coelhard', 'Jan211999', '(DESCRIPTION=(ADDRESS_LIST=(ADDRES
 
 $dealership_id = $_GET["dealership_id"];
 $user_email = $_GET["user_email"];
+$vehicle_id = $_GET["vehicle_id"];
 
 echo $dealership_id;
 echo $user_email;
+echo $vehicle_id;
 
 $query = "INSERT INTO UserVehicleWatchlist (UserVehicleWatchlist_ID, Vehicle_ID, User_ID, dealership_id) VALUES ( $PK_ID , $vehcle_id , $user_id , $dealership_id )";
 
