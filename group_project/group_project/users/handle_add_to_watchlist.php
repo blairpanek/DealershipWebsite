@@ -18,18 +18,10 @@ echo $vehicle_id;
 $query = "INSERT INTO UserVehicleWatchlist VALUES ( '$combination_id' , '$vehcle_id' , '$user_id' , '$dealership_id' )";
 
 $stid = oci_parse($conn, $query);
-// $stid2 = oci_parse($conn, "SELECT * FROM UserVehicleWatchlist" );
-oci_execute($stid);
-// oci_execute($stid2);
-// while (($row = oci_fetch_array($stid2, OCI_BOTH)) != false) {
-//     echo 'UVW id: '   . $row[0];
-//     echo '<br />';
-//     echo 'V id: '   . $row[1];
-//     echo '<br />';
-//     echo 'U id: '    . $row[2];
-//     echo '<br />';
-//     echo 'D id: ' . $row[3];
-// }
+
+$execute_flag = oci_execute($stid);
+echo '<br />';
+echo $execute_flag;
 
 oci_free_statement($stid);
 oci_close($conn);
