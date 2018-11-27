@@ -6,16 +6,14 @@ $dealership_id = $_GET["dealership_id"];
 $user_email = $_GET["user_email"];
 $vehicle_id = $_GET["vehicle_id"];
 
-echo (string)$dealership_id . (string)$user_email;
-echo '<br  />';
-$combination_id = intval((string)$dealership_id . (string)$user_email . (string)$vehicle_id);
+$combination_id = $dealership_id . $user_email . $vehicle_id;
 echo $combination_id;
 
 echo $dealership_id;
 echo $user_email;
 echo $vehicle_id;
 
-$query = "INSERT INTO UserVehicleWatchlist (UserVehicleWatchlist_ID, Vehicle_ID, User_ID, dealership_id) VALUES ( $PK_ID , $vehcle_id , $user_id , $dealership_id )";
+$query = "INSERT INTO UserVehicleWatchlist (" . $combination_id . ", " . $vehicle_id .", " . $user_email . ", " . $dealership_id . ") VALUES ( '" . $combination_id . "' , '" . $vehcle_id . "' , '" . $user_id . "' , '" . $dealership_id . "' )";
 
 $stid = oci_parse($conn, $query);
 $stid2 = oci_parse($conn, "SELECT * FROM UserVehicleWatchlist" );
