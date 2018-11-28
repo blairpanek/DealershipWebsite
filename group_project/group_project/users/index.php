@@ -1,4 +1,5 @@
-<?php require "header.php"?>
+<?php require "header.php"
+echo $_SESSION['username']?>
 <!DOCTYPE html>
 <html>
 <head>
