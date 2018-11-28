@@ -1,5 +1,4 @@
-<?php require "header.php"
-echo $_SESSION['username']?>
+<?php require "header.php"?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -36,8 +35,8 @@ echo $_SESSION['username']?>
 
     <div class="jumbotron">
       <?php
-        if (!($_SESSION["username"] == '')) {
-          echo "<h1 class=\"display-4\">Welcome" . $_SESSION["username"] . "</h1>";
+        if (!($_SESSION['username'] == '')) {
+          echo "<h1 class=\"display-4\">Welcome" . $_SESSION['username'] . "!</h1>";
         } else {
           echo "<h1 class=\"display-4\">Welcome Customers! </h1>";
         }
