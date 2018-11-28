@@ -15,9 +15,10 @@ echo $user_email;
 echo '<br />';
 echo $vehicle_id;
 echo '<br />';
-echo '{$combination_id}';
 
-$query = "INSERT INTO UserVehicleWatchlist VALUES ( '{$combination_id}' , {$vehcle_id} , '{$user_email}' , {$dealership_id} )";
+$query = "INSERT INTO UserVehicleWatchlist VALUES ( '" . $combination_id . "' , " . $vehcle_id . " , '" . $user_email . "' , " . $dealership_id . " )";
+
+echo $query;
 
 $stid = oci_parse($conn, $query);
 
