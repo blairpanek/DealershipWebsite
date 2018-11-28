@@ -39,6 +39,7 @@
               echo '<br />';
               echo 'Price: '   . $row[6];
               echo '<br />';
+              echo '<br />';
               echo "<a class=\"btn btn-primary\" href=\"handle_add_to_watchlist.php?dealership_id=$dealership_id&username=$username&vehicle_id=$vehicle_id\" role=\"button\"> Add to Watchlist </a>";
             echo '</div>';
             echo '<div class="mb-4"> </div>';
