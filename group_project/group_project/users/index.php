@@ -1,3 +1,7 @@
+<?php
+  echo $_SESSION["username"];
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
