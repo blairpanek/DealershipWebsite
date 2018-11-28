@@ -6,12 +6,12 @@ $dealership_id = $_GET["dealership_id"];
 $username = "user";
 $vehicle_id = $_GET["vehicle_id"];
 
-$combination_id = $vehicle_id . $user_email . $dealership_id;
+$combination_id = $vehicle_id . $username . $dealership_id;
 echo $combination_id;
 echo '<br />';
 echo $dealership_id;
 echo '<br />';
-echo $user_email;
+echo $username;
 echo '<br />';
 echo $vehicle_id;
 echo '<br />';
