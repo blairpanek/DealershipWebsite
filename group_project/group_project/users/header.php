@@ -1,5 +1,5 @@
 <?php
-  session_start();
+  /*session_start();
   if(isset($_SESSION['username'])){
     //This session already exists, should already contain data
       echo "User name:", $_SESSION['id'], "<br />"
@@ -9,4 +9,4 @@
 
     header('Location: login.php');
     $_SESSION['id'] = 444;
-  }?>
+  }*/?>
