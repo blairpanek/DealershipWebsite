@@ -64,4 +64,4 @@ INSERT INTO Dealerships VALUES (1, 'Dealer X', 'Fargo, ND');
 INSERT INTO Dealerships VALUES (2, 'Dealer Y', 'Fargo, ND');
 INSERT INTO Dealerships VALUES (3, 'Dealer Z', 'Fargo, ND');
 INSERT INTO Vehicles VALUES (1, 1, 'Blue', 'Ford Eclipse', '2017', '120000', 1500);
-INSERT INTO UserVehicleWatchlist VALUES ( '1user@mail.com1' , 1 , 'user@mail.com' , 1 );
+INSERT INTO UserVehicleWatchlist VALUES ( '1user1' , 1 , 'user' , 1 );
