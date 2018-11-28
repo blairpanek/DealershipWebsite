@@ -1,10 +1,9 @@
 <?php
-session_start();
 // Remember to replace 'username' and 'password'!
 $conn = oci_connect('coelhard', 'Jan211999', '(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(Host=db2.ndsu.edu)(Port=1521)))(CONNECT_DATA=(SID=cs)))');
 
-$username = $_GET["username"];
-$password = $_GET["password"];
+$username = $_POST["username"];
+$password = $_POST["password"];
 $query = "select COUNT(users.username) from users where username='$username' and password='$password'";
 $stid = oci_parse($conn, $query);
 oci_execute($stid);
@@ -17,10 +16,10 @@ while ($row = oci_fetch_array($stid, OCI_ASSOC+OCI_RETURN_NULLS)) {
 }
 
 if ($user_count == 1) {
+  session_start();
   $_SESSION["username"] = $username;
   header('Location: index.php');
 } else {
-  echo $username;
   echo "Invalid username and password. Go Back!";
 }
 
