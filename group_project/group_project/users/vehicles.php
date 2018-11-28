@@ -16,23 +16,32 @@
     <title> Vehicles - Dealer View </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <style>
+      body {
+        background-color: #f8f9fa!important;
+      }
+    </style>
   </head>
   <body>
     <div class="container">
       <?php
         while (($row = oci_fetch_array($stid, OCI_BOTH)) != false) {
-            $vehicle_id = $row[0];
-            echo 'Color: '   . $row[2];
-            echo '<br />';
-            echo 'Model: '   . $row[3];
-            echo '<br />';
-            echo 'Year: '    . $row[4];
-            echo '<br />';
-            echo 'Mileage: ' . $row[5];
-            echo '<br />';
-            echo 'Price: '   . $row[6];
-            echo '<br />';
-            echo "<a class=\"btn btn-primary\" href=\"handle_add_to_watchlist.php?dealership_id=$dealership_id&username=$username&vehicle_id=$vehicle_id\" role=\"button\"> Add to Watchlist </a>";
+            echo '<div class="mt-4"> </div>';
+            echo '<div class="card">';
+              $vehicle_id = $row[0];
+              echo 'Color: '   . $row[2];
+              echo '<br />';
+              echo 'Model: '   . $row[3];
+              echo '<br />';
+              echo 'Year: '    . $row[4];
+              echo '<br />';
+              echo 'Mileage: ' . $row[5];
+              echo '<br />';
+              echo 'Price: '   . $row[6];
+              echo '<br />';
+              echo "<a class=\"btn btn-primary\" href=\"handle_add_to_watchlist.php?dealership_id=$dealership_id&username=$username&vehicle_id=$vehicle_id\" role=\"button\"> Add to Watchlist </a>";
+            echo '</div>';
+            echo '<div class="mb-4"> </div>';
             echo '<hr />';
         }
       ?>
