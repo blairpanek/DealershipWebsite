@@ -35,7 +35,7 @@
     <div class="jumbotron">
       <?php
         if (!($_SESSION["username"] == '')) {
-          echo "<h1 class=\"display-4\">Welcome" . $_SESSION["username"] . "</h1>";
+          echo "<h1 class=\"display-4\">Welcome" $_SESSION["username"] "</h1>";
         } else {
           echo "<h1 class=\"display-4\">Welcome Customers! </h1>";
         }
