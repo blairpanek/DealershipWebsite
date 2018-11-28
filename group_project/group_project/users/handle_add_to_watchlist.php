@@ -3,7 +3,7 @@
 $conn = oci_connect('coelhard', 'Jan211999', '(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(Host=db2.ndsu.edu)(Port=1521)))(CONNECT_DATA=(SID=cs)))');
 
 $dealership_id = $_GET["dealership_id"];
-$user_email = $_GET["user_email"];
+$username = "user";
 $vehicle_id = $_GET["vehicle_id"];
 
 $combination_id = $vehicle_id . $user_email . $dealership_id;
@@ -16,7 +16,7 @@ echo '<br />';
 echo $vehicle_id;
 echo '<br />';
 
-$query = "INSERT INTO UserVehicleWatchlist VALUES ( '" . $combination_id . "' , " . $vehicle_id . " , '" . $user_email . "' , " . $dealership_id . " )";
+$query = "INSERT INTO UserVehicleWatchlist VALUES ( '" . $combination_id . "' , " . $vehicle_id . " , '" . $username . "' , " . $dealership_id . " )";
 
 echo $query;
 

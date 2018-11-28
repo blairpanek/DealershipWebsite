@@ -3,7 +3,7 @@
 $conn = oci_connect('coelhard', 'Jan211999', '(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(Host=db2.ndsu.edu)(Port=1521)))(CONNECT_DATA=(SID=cs)))');
 
 $dealership_id = $_GET["dealership_id"];
-$user_email = "user@mail.com";
+$user = "user";
 
 $query = "select * FROM Vehicles WHERE Dealership_ID = " . $dealership_id;
 $stid = oci_parse($conn, $query);
