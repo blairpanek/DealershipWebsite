@@ -1,32 +1,13 @@
 <?php
-// Remember to replace 'username' and 'password'!
-$conn = oci_connect('coelhard', 'Jan211999', '(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(Host=db2.ndsu.edu)(Port=1521)))(CONNECT_DATA=(SID=cs)))');
+  // Remember to replace 'username' and 'password'!
+  $conn = oci_connect('coelhard', 'Jan211999', '(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(Host=db2.ndsu.edu)(Port=1521)))(CONNECT_DATA=(SID=cs)))');
 
-$dealership_id = $_GET["dealership_id"];
-$username = "user";
+  $dealership_id = $_GET["dealership_id"];
+  $username = "user";
 
-$query = "select * FROM Vehicles WHERE Dealership_ID = " . $dealership_id;
-$stid = oci_parse($conn, $query);
-oci_execute($stid);
-
-while (($row = oci_fetch_array($stid, OCI_BOTH)) != false) {
-    $vehicle_id = $row[0];
-    echo 'Color: '   . $row[2];
-    echo '<br />';
-    echo 'Model: '   . $row[3];
-    echo '<br />';
-    echo 'Year: '    . $row[4];
-    echo '<br />';
-    echo 'Mileage: ' . $row[5];
-    echo '<br />';
-    echo 'Price: '   . $row[6];
-    echo '<br />';
-    echo "<a class=\"btn btn-primary\" href=\"handle_add_to_watchlist.php?dealership_id=$dealership_id&username=$username&vehicle_id=$vehicle_id\" role=\"button\"> Add to Watchlist </a>";
-    echo '<hr />';
-}
-
-oci_free_statement($stid);
-oci_close($conn);
+  $query = "select * FROM Vehicles WHERE Dealership_ID = " . $dealership_id;
+  $stid = oci_parse($conn, $query);
+  oci_execute($stid);
 ?>
 
 <html lang="en" dir="ltr">
@@ -37,6 +18,25 @@ oci_close($conn);
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   </head>
   <body>
+    <div class="container">
+      <?php
+        while (($row = oci_fetch_array($stid, OCI_BOTH)) != false) {
+            $vehicle_id = $row[0];
+            echo 'Color: '   . $row[2];
+            echo '<br />';
+            echo 'Model: '   . $row[3];
+            echo '<br />';
+            echo 'Year: '    . $row[4];
+            echo '<br />';
+            echo 'Mileage: ' . $row[5];
+            echo '<br />';
+            echo 'Price: '   . $row[6];
+            echo '<br />';
+            echo "<a class=\"btn btn-primary\" href=\"handle_add_to_watchlist.php?dealership_id=$dealership_id&username=$username&vehicle_id=$vehicle_id\" role=\"button\"> Add to Watchlist </a>";
+            echo '<hr />';
+        }
+      ?>
+    </div>
 
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -44,3 +44,8 @@ oci_close($conn);
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
   </body>
 </html>
+
+<?php
+  oci_free_statement($stid);
+  oci_close($conn);
+?>
