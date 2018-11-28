@@ -16,7 +16,7 @@ echo '<br />';
 echo $vehicle_id;
 echo '<br />';
 
-$query = "INSERT INTO UserVehicleWatchlist VALUES ( '" . $combination_id . "' , " . $vehcle_id . " , '" . $user_email . "' , " . $dealership_id . " )";
+$query = "INSERT INTO UserVehicleWatchlist VALUES ( '" . $combination_id . "' , " . $vehicle_id . " , '" . $user_email . "' , " . $dealership_id . " )";
 
 echo $query;
 
