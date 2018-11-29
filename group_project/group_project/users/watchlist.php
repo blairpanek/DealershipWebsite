@@ -4,11 +4,11 @@ $conn = oci_connect('iflage', 'Feb161998', '(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=
 
 //we will need to get username from the session to ensure this is the correct watchlist
 $watchlist_id = "1user1";
-$query = "select * FROM UserVehicleWatchlist WHERE UserVehicleWatchlist_ID = '1user1'";// . $watchlist_id . "'";
+$query = "select * FROM UserVehicleWatchlist WHERE UserVehicleWatchlist_ID = '" . $watchlist_id . "'";
 $stid = oci_parse($conn, $query);
 
-$vehicleID = 1;
-$vehicleID2 = 2;
+$vehicleID = 0;
+$vehicleID2 = 0;
 oci_execute($stid);
 
 //sets vehicle ID for other query
