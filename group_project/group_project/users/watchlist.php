@@ -3,8 +3,9 @@
 $conn = oci_connect('iflage', 'Feb161998', '(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(Host=db2.ndsu.edu)(Port=1521)))(CONNECT_DATA=(SID=cs)))');
 
 //we will need to get username from the session to ensure this is the correct watchlist
+$username = 'user';
 $watchlist_id = "1user1";
-$query = "select * FROM UserVehicleWatchlist WHERE UserVehicleWatchlist_ID = '" . $watchlist_id . "'";
+$query = "select * FROM UserVehicleWatchlist WHERE UserVehicleWatchlist_ID = '" . $username . "'";
 $stid = oci_parse($conn, $query);
 
 $vehicleID = 0;
