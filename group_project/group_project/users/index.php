@@ -26,11 +26,21 @@
             <a class="nav-link" href="search.php"> Search </a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="login.php"> Login </a>
-          </li>
-          <li class="nav-item active">
             <a class="nav-link" href="watchlist.php"> Watchlist </a>
           </li>
+	  <?php
+            if(!$_SESSION['username'] == ''){
+              echo "<li class=\"nav-item active\">";
+              echo  "<a class=\"nav-link\" href=\"logout.php\"> Logout </a>";
+              echo "</li>";
+            }
+            else{
+              echo "<li class=\"nav-item active\">";
+              echo  "<a class=\"nav-link\" href=\"login.php\"> Login </a>";
+              echo "</li>";
+            }
+
+          ?>
         </ul>
       </div>
     </nav>
