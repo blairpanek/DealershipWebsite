@@ -2,8 +2,6 @@
   // Remember to replace 'username' and 'password'!
   $conn = oci_connect('coelhard', 'Jan211999', '(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(Host=db2.ndsu.edu)(Port=1521)))(CONNECT_DATA=(SID=cs)))');
 
-  $dealership_id = $_GET["dealership_id"];
-  echo $dealership_id;
   $username = "user";
 
   $query = "select * FROM Vehicles WHERE Dealership_ID = " . $dealership_id;
