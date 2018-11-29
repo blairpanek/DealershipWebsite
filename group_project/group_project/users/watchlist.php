@@ -5,10 +5,9 @@ $conn = oci_connect('iflage', 'Feb161998', '(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=
 //we will need to get username from the session to ensure this is the correct watchlist
 $username = 'user';
 
-$query = "select * From Vehicles LEFT JOIN (UserVehicleWatchlist Where Username = '" . $username . "') ON Vehicles.Vehicle_ID = UserVehicleWatchlist.Vehicle_ID";
-$query2 = "select Vehicle_ID From UserVehicleWatchlist where username = 'user'";
-$query3 = "Select * From Vehicles Where Vehicle_ID = (select Vehicle_ID From UserVehicleWatchlist where username = 'user')";
-$stid = oci_parse($conn, $query3);
+$query = "SELECT * FROM Vehicles LEFT OUTER JOIN UserVehicleWatchlist ON( Vehicles.vehicle_id = UserVehicleWatchlist.Vehicle_ID and UserVehicleWatchlist.UserName = 'user' )";
+
+$stid = oci_parse($conn, $query);
 
 oci_execute($stid);
 ?>
