@@ -28,7 +28,7 @@
       <?php
         while (($row = oci_fetch_array($stid, OCI_BOTH)) != false) {
             echo "<div class=\"mt-4\"> </div>";
-            echo "<div class=\"card p-5\">";
+            echo "<div class=\"card p-5 shadow-lg\">";
               $vehicle_id = $row[0];
               echo 'Color: '   . $row[2];
               echo '<br />';
