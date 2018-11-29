@@ -4,62 +4,61 @@ $conn = oci_connect('iflage', 'Feb161998', '(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=
 
 //we will need to get username from the session to ensure this is the correct watchlist
 $username = 'user';
-$watchlist_id = "1user1";
-$query = "select * FROM UserVehicleWatchlist WHERE UserName = '" . $username . "'";
+
+$query = "select * From Vehicles LEFT JOIN (UserVehicleWatchlist Where Username = '" . $username . "') ON Vehicles.Vehicle_ID = UserVehicleWatchlist.Vehicle_ID";
+
 $stid = oci_parse($conn, $query);
-
-$vehicleID = 0;
-$vehicleID2 = 0;
 oci_execute($stid);
-
-//sets vehicle ID for other query
-while (($row = oci_fetch_array($stid, OCI_BOTH)) != false) {
-  $vehicleID = $row[1];
-  $vehicleID2 = $row[2];
-}
-oci_free_statement($stid);
-
-$query2 = "select * FROM Vehicles WHERE Vehicle_ID = " . $vehicleID;
-$stid2 = oci_parse($conn, $query2);
-oci_execute($stid2);
-
-while (($row = oci_fetch_array($stid2, OCI_BOTH)) != false) {
-  echo 'Color: '   . $row[2];
-  echo '<br />';
-  echo 'Model: '   . $row[3];
-  echo '<br />';
-  echo 'Year: '    . $row[4];
-  echo '<br />';
-  echo 'Mileage: ' . $row[5];
-  echo '<br />';
-  echo 'Price: '   . $row[6];
-  echo '<hr />';
-}
-oci_free_statement($stid2);
-
-//IF $vehicleID2 != NULL{
-$query3 = "select * FROM Vehicles WHERE Vehicle_ID = " . $vehicleID2;
-$stid3 = oci_parse($conn, $query3);
-oci_execute($stid3);
-
-while (($row = oci_fetch_array($stid3, OCI_BOTH)) != false) {
-  echo 'Color: '   . $row[2];
-  echo '<br />';
-  echo 'Model: '   . $row[3];
-  echo '<br />';
-  echo 'Year: '    . $row[4];
-  echo '<br />';
-  echo 'Mileage: ' . $row[5];
-  echo '<br />';
-  echo 'Price: '   . $row[6];
-  echo '<hr />';
-}
-
-oci_free_statement($stid3);
-
-oci_close($conn);
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title> Watchlist - User View </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <style>
+      body {
+        background-color: #f8f9fa!important;
+      }
+    </style>
+  </head>
+  <body>
+    <h1> Content? </h1>
+    <div class="container">
+      <?php
+        while (($row = oci_fetch_array($stid, OCI_BOTH)) != false) {
+            echo "<div class=\"mt-4\"> </div>";
+            echo "<div class=\"card p-5\">";
+              $vehicle_id = $row[0];
+              echo 'Color: '   . $row[2];
+              echo '<br />';
+              echo 'Model: '   . $row[3];
+              echo '<br />';
+              echo 'Year: '    . $row[4];
+              echo '<br />';
+              echo 'Mileage: ' . $row[5];
+              echo '<br />';
+              echo 'Price: '   . $row[6];
+              echo '<br />';
+              echo '<br />';
+              echo "<a class=\"btn btn-primary\" href=\"handle_add_to_watchlist.php?dealership_id=$dealership_id&username=$username&vehicle_id=$vehicle_id\" role=\"button\"> Add to Watchlist </a>";
+            echo '</div>';
+            echo "<div class=\"mb-4\"> </div>";
+            echo '<hr />';
+        }
+      ?>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  </body>
 </html>
+
+<?php
+oci_free_statement($stid);
+oci_close($conn);
+?>
