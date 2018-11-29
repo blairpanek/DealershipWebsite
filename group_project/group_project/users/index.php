@@ -27,6 +27,9 @@
           <li class="nav-item active">
             <a class="nav-link" href="login.php"> Login </a>
           </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="watchlist.php"> Watchlist </a>
+          </li>
         </ul>
       </div>
     </nav>

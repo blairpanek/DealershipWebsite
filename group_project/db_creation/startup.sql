@@ -48,7 +48,6 @@ Create Table DealershipUsers (
 Create Table UserVehicleWatchlist (
   UserVehicleWatchlist_ID VARCHAR(50) NOT NULL,
   Vehicle_ID int NOT NULL,
-  Vehicle_ID2 int,
   UserName VARCHAR(50) NOT NULL,
   Dealership_ID int NOT NULL,
   PRIMARY KEY (UserVehicleWatchlist_ID),
