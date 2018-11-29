@@ -7,7 +7,7 @@ $username = 'user';
 
 $query = "select * From Vehicles LEFT JOIN (UserVehicleWatchlist Where Username = '" . $username . "') ON Vehicles.Vehicle_ID = UserVehicleWatchlist.Vehicle_ID";
 $query2 = "select Vehicle_ID From UserVehicleWatchlist where username = 'user'";
-$query3 = "Select * From Vehicles Where Vehicle_ID = $query2";
+$query3 = "Select * From Vehicles Where Vehicle_ID = (select Vehicle_ID From UserVehicleWatchlist where username = 'user')";
 $stid = oci_parse($conn, $query3);
 
 oci_execute($stid);
