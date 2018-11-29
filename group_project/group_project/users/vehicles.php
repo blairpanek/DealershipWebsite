@@ -25,8 +25,8 @@
     <div class="container">
       <?php
         while (($row = oci_fetch_array($stid, OCI_BOTH)) != false) {
-            echo '<div class="mt-4"> </div>';
-            echo '<div class="card p-5">';
+            echo "<div class=\"mt-4\"> </div>";
+            echo "<div class=\"card p-5\">";
               $vehicle_id = $row[0];
               echo 'Color: '   . $row[2];
               echo '<br />';
@@ -41,7 +41,7 @@
               echo '<br />';
               echo "<a class=\"btn btn-primary\" href=\"handle_add_to_watchlist.php?dealership_id=$dealership_id&username=$username&vehicle_id=$vehicle_id\" role=\"button\"> Add to Watchlist </a>";
             echo '</div>';
-            echo '<div class="mb-4"> </div>';
+            echo "<div class=\"mb-4\"> </div>";
             echo '<hr />';
         }
       ?>
