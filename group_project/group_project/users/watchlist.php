@@ -1,6 +1,6 @@
 <?php
 // Remember to replace 'username' and 'password'!
-$conn = oci_connect('iflage', 'Feb161998', '(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(Host=db2.ndsu.edu)(Port=1521)))(CONNECT_DATA=(SID=cs)))');
+$conn = oci_connect('coelhard', 'Jan211999', '(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(Host=db2.ndsu.edu)(Port=1521)))(CONNECT_DATA=(SID=cs)))');
 
 //we will need to get username from the session to ensure this is the correct watchlist
 $username = 'user';
