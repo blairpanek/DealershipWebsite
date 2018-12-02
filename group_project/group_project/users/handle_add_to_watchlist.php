@@ -7,22 +7,14 @@ $username = "user";
 $vehicle_id = $_GET["vehicle_id"];
 
 $combination_id = $vehicle_id . $username . $dealership_id;
-echo $combination_id;
-echo '<br />';
-echo $dealership_id;
-echo '<br />';
-echo $username;
-echo '<br />';
-echo $vehicle_id;
-echo '<br />';
 
 $query = "INSERT INTO UserVehicleWatchlist VALUES ( '" . $combination_id . "' , " . $vehicle_id . " , '" . $username . "' , " . $dealership_id . " )";
 
-echo $query;
-
 $stid = oci_parse($conn, $query);
 
-oci_execute($stid);
+$execution_status_ok = oci_execute($stid);
+
+echo $execution_status_ok;
 
 oci_free_statement($stid);
 oci_close($conn);
