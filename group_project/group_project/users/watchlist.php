@@ -5,9 +5,6 @@ $conn = oci_connect('coelhard', 'Jan211999', '(DESCRIPTION=(ADDRESS_LIST=(ADDRES
 
 //we will need to get username from the session to ensure this is the correct watchlist
 $username = $_SESSION['username'];
-$dealership_id = 1;
-
-$query = "SELECT * FROM Vehicles LEFT JOIN UserVehicleWatchlist ON UserVehicleWatchlist.Vehicle_ID=Vehicles.Vehicle_id AND UserVehicleWatchlist.UserName=$username";
 
 $query = "SELECT Vehicles.*, UserVehicleWatchlist.Vehicle_ID FROM Vehicles INNER JOIN UserVehicleWatchlist ON Vehicles.Vehicle_ID = UserVehicleWatchlist.Vehicle_ID AND UserVehicleWatchlist.UserName='$username'";
 $stid = oci_parse($conn, $query);
@@ -73,6 +70,7 @@ oci_execute($stid);
             echo "<div class=\"mt-4\"> </div>";
             echo "<div class=\"card p-5 shadow-lg\">";
               $vehicle_id = $row[0];
+              $dealership_id = $row[1];
               echo 'Color: '   . $row[2];
               echo '<br />';
               echo 'Model: '   . $row[3];
