@@ -7,7 +7,7 @@ $conn = oci_connect('coelhard', 'Jan211999', '(DESCRIPTION=(ADDRESS_LIST=(ADDRES
 $username = $_SESSION['username'];
 $dealership_id = 1;
 
-$query = "SELECT * FROM Vehicles LEFT JOIN UserVehicleWatchlist ON Vehicles.Vehicle_id = UserVehicleWatchlist.Vehicle_ID AND UserVehicleWatchlist.UserName = $username";
+$query = "SELECT * FROM Vehicles LEFT JOIN UserVehicleWatchlist ON UserVehicleWatchlist.Vehicle_ID=Vehicles.Vehicle_id AND UserVehicleWatchlist.UserName=$username";
 
 $stid = oci_parse($conn, $query);
 
