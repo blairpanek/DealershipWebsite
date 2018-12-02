@@ -17,7 +17,7 @@ oci_execute($stid);
 oci_free_statement($stid);
 oci_close($conn);
 
-header('Location: vehicles.php');
+header('Location: dealership.php');
 ?>
 
 <html lang="en" dir="ltr">
