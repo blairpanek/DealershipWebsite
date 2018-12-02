@@ -12,7 +12,7 @@ $query = "Delete From UserVehicleWatchlist Where UserVehicleWatchlist_ID = '$com
 
 $stid = oci_parse($conn, $query);
 
-$execution_status_ok = oci_execute($stid);
+oci_execute($stid);
 
 oci_free_statement($stid);
 oci_close($conn);
