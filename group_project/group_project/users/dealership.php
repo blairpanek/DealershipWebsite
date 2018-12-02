@@ -40,9 +40,6 @@ oci_execute($stid);
               <a class="nav-link" href="dealership.php"> Dealerships </a>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" href="search.php"> Search </a>
-            </li>
-            <li class="nav-item active">
               <a class="nav-link" href="watchlist.php"> Watchlist </a>
             </li>
       <?php
