@@ -9,6 +9,7 @@ $dealership_id = 1;
 
 $query = "SELECT * FROM Vehicles LEFT JOIN UserVehicleWatchlist ON UserVehicleWatchlist.Vehicle_ID=Vehicles.Vehicle_id AND UserVehicleWatchlist.UserName=$username";
 
+$query = "SELECT * FROM Vehicles INNER JOIN UserVehicleWatchlist ON Vehicles.Vehicle_ID = UserVehicleWatchlist.Vehicle_ID";
 $stid = oci_parse($conn, $query);
 
 oci_execute($stid);
