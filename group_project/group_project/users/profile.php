@@ -2,7 +2,6 @@
 session_start();
 $conn = oci_connect('coelhard', 'Jan211999', '(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(Host=db2.ndsu.edu)(Port=1521)))(CONNECT_DATA=(SID=cs)))');
 $username = $_SESSION["username"];
-//$username = "user";
 $query = "SELECT * FROM Users WHERE UserName = '" . $username . "'";
 $stid = oci_parse($conn, $query);
 oci_execute($stid);

@@ -3,7 +3,7 @@
 $conn = oci_connect('coelhard', 'Jan211999', '(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(Host=db2.ndsu.edu)(Port=1521)))(CONNECT_DATA=(SID=cs)))');
 
 $dealership_id = $_GET["dealership_id"];
-$username = "user";
+$username = $_SESSION['username'];
 $vehicle_id = $_GET["vehicle_id"];
 
 $combination_id = $vehicle_id . $username . $dealership_id;
