@@ -8,7 +8,7 @@ $vehicle_id = $_GET["vehicle_id"];
 
 $combination_id = $vehicle_id . $username . $dealership_id;
 
-$query = "Delete From UserVehicleWatchlist Where UserVehicleWatchlist_ID = '" . $combination_id . "'";
+$query = "Delete From UserVehicleWatchlist Where UserVehicleWatchlist_ID = '$combination_id'";
 
 $stid = oci_parse($conn, $query);
 
