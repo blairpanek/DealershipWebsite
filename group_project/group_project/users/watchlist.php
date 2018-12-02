@@ -65,7 +65,6 @@ oci_execute($stid);
 
       <hr />
 
-
     <div class="container">
       <?php
         while (($row = oci_fetch_array($stid, OCI_BOTH)) != false) {
@@ -81,6 +80,9 @@ oci_execute($stid);
               echo 'Mileage: ' . $row[5];
               echo '<br />';
               echo 'Price: '   . $row[6];
+              echo '<br />';
+              echo '<br />';
+              echo "<a class=\"btn btn-primary\" href=\"handle_remove_from_watchlist.php?dealership_id=$dealership_id&username=$username&vehicle_id=$vehicle_id\" role=\"button\"> Remove from Watchlist </a>";
             echo '</div>';
             echo "<div class=\"mb-4\"> </div>";
             echo '<hr />';
