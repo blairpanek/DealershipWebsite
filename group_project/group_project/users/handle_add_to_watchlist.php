@@ -8,7 +8,7 @@ $vehicle_id = $_GET["vehicle_id"];
 
 $combination_id = $vehicle_id . $username . $dealership_id;
 
-$query = "INSERT INTO UserVehicleWatchlist VALUES ( '" . $combination_id . "' , " . $vehicle_id . " , '" . $username . "' , " . $dealership_id . " )";
+$query = "INSERT INTO UserVehicleWatchlist VALUES ( '$combination_id' , $vehicle_id , '$username' , $dealership_id )";
 
 $stid = oci_parse($conn, $query);
 
