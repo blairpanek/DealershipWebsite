@@ -1,4 +1,5 @@
 <?php
+session_start();
 // Remember to replace 'username' and 'password'!
 $conn = oci_connect('coelhard', 'Jan211999', '(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(Host=db2.ndsu.edu)(Port=1521)))(CONNECT_DATA=(SID=cs)))');
 
@@ -8,7 +9,7 @@ $vehicle_id = $_GET["vehicle_id"];
 
 $combination_id = $vehicle_id . $username . $dealership_id;
 
-$query = "INSERT INTO UserVehicleWatchlist VALUES ( '$combination_id' , $vehicle_id , '$username' , $dealership_id )";
+$query = "INSERT INTO UserVehicleWatchlist VALUES ( '" . $combination_id . "' , " . $vehicle_id . " , '" . $username . "' , " . $dealership_id . " )";
 
 $stid = oci_parse($conn, $query);
 
