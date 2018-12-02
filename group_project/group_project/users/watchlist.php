@@ -4,10 +4,10 @@ session_start();
 $conn = oci_connect('coelhard', 'Jan211999', '(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(Host=db2.ndsu.edu)(Port=1521)))(CONNECT_DATA=(SID=cs)))');
 
 //we will need to get username from the session to ensure this is the correct watchlist
-$username = 'user';
+$username = $_SESSION['username'];
 $dealership_id = 1;
 
-$query = "SELECT * FROM Vehicles LEFT OUTER JOIN UserVehicleWatchlist ON( Vehicles.vehicle_id = UserVehicleWatchlist.Vehicle_ID and UserVehicleWatchlist.UserName = 'user' )";
+$query = "SELECT * FROM Vehicles LEFT JOIN UserVehicleWatchlist ON( Vehicles.vehicle_id = UserVehicleWatchlist.Vehicle_ID AND UserVehicleWatchlist.UserName = '$username' )";
 
 $stid = oci_parse($conn, $query);
 
