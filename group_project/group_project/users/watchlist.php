@@ -5,6 +5,7 @@ $conn = oci_connect('coelhard', 'Jan211999', '(DESCRIPTION=(ADDRESS_LIST=(ADDRES
 
 //we will need to get username from the session to ensure this is the correct watchlist
 $username = 'user';
+$dealership_id = 1;
 
 $query = "SELECT * FROM Vehicles LEFT OUTER JOIN UserVehicleWatchlist ON( Vehicles.vehicle_id = UserVehicleWatchlist.Vehicle_ID and UserVehicleWatchlist.UserName = 'user' )";
 

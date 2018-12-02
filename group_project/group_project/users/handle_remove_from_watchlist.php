@@ -7,6 +7,7 @@ $username = "user";
 $vehicle_id = $_GET["vehicle_id"];
 
 $combination_id = $vehicle_id . $username . $dealership_id;
+echo $combination_id;
 
 $query = "DELETE FROM UserVehicleWatchlist WHERE UserVehicleWatchlist_ID='$combination_id'";
 echo $query;
@@ -17,8 +18,6 @@ oci_execute($stid);
 
 oci_free_statement($stid);
 oci_close($conn);
-
-header('Location: watchlist.php');
 ?>
 
 <html lang="en" dir="ltr">
