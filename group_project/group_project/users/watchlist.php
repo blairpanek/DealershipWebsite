@@ -6,7 +6,7 @@ $conn = oci_connect('coelhard', 'Jan211999', '(DESCRIPTION=(ADDRESS_LIST=(ADDRES
 //we will need to get username from the session to ensure this is the correct watchlist
 $username = $_SESSION['username'];
 
-$query = "SELECT Vehicles.*, UserVehicleWatchlist.Vehicle_ID FROM Vehicles INNER JOIN UserVehicleWatchlist ON Vehicles.Vehicle_ID = UserVehicleWatchlist.Vehicle_ID AND UserVehicleWatchlist.UserName='$username'";
+$query = "SELECT Vehicles.*, UserVehicleWatchlist.Vehicle_ID, UserVehicleWatchlist.UserName FROM Vehicles INNER JOIN UserVehicleWatchlist ON Vehicles.Vehicle_ID = UserVehicleWatchlist.Vehicle_ID AND UserVehicleWatchlist.UserName='$username'";
 $stid = oci_parse($conn, $query);
 
 oci_execute($stid);
