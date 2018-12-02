@@ -36,7 +36,7 @@ oci_execute($stid);
             <li class="nav-item active">
               <a class="nav-link" href="watchlist.php"> Watchlist </a>
             </li>
-            <li>
+            <li class="nav-item-active">
               <?php
                 if ($username == '') {
                   echo  "<a class=\"nav-link\" href=\"login.php\"> Login </a>";
