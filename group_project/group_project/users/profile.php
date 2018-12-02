@@ -36,13 +36,15 @@ oci_execute($stid);
             <li class="nav-item active">
               <a class="nav-link" href="watchlist.php"> Watchlist </a>
             </li>
-            <?php
-              if ($username == '') {
-                echo  "<a class=\"nav-link\" href=\"login.php\"> Login </a>";
-              } else {
-                echo  "<a class=\"nav-link\" href=\"logout.php\"> Logout </a>";
-              }
-            ?>
+            <li>
+              <?php
+                if ($username == '') {
+                  echo  "<a class=\"nav-link\" href=\"login.php\"> Login </a>";
+                } else {
+                  echo  "<a class=\"nav-link\" href=\"logout.php\"> Logout </a>";
+                }
+              ?>
+            </li>
           </ul>
         </div>
       </nav>
