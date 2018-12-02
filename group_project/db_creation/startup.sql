@@ -54,3 +54,4 @@ INSERT INTO Vehicles VALUES (2, 1, 'Red', 'Chevy Malibu', '2017', '10000', 1500)
 INSERT INTO Vehicles VALUES (3, 2, 'Janky Yellow', 'Chevy Blazer', '2017', '10000', 1500);
 INSERT INTO Vehicles VALUES (4, 2, 'Ridicolous Red', 'Ford Malibu', '2005', '10000', 1500);
 INSERT INTO UserVehicleWatchlist VALUES ( '1user1' , 1, 'user' , 1 );
+DELETE FROM UserVehicleWatchlist Where UserVehicleWatchlist_ID = '1user1';
