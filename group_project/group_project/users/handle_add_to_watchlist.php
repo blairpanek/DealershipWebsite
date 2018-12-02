@@ -14,7 +14,7 @@ $stid = oci_parse($conn, $query);
 
 $execution_status_ok = oci_execute($stid);
 
-echo $execution_status_ok;
+echo (string)$execution_status_ok;
 
 oci_free_statement($stid);
 oci_close($conn);
