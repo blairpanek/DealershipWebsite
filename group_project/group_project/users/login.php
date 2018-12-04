@@ -46,8 +46,8 @@
 
 <hr />
     <form action="handle_login.php" method="get">
-      Username: <input type="text" name="username"><br>
-      Password: <input type="password" name="password" id="myInput"><br><br>
+      Username: <input type="text" name="username" required><br>
+      Password: <input type="password" name="password" id="myInput" required><br><br>
       <input type="submit">
     </form>
     <br>

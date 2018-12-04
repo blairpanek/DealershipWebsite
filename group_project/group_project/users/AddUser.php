@@ -48,15 +48,15 @@
       </h1>
 
       <form action="insertUser.php" method="post">
-        Name: <input type="text" name="name" id = "name">
+        Name: <input type="text" name="name" id="name" required>
         <br>
-        Username: <input type="text" name="username" id = "username">
+        Username: <input type="text" name="username" id="username" required>
         <br>
-        Password: <input type="text" name="password" id= "password">
+        Password: <input type="password" minlength="8" name="password" id="password" required>
         <br>
-        Phone Number: <input type="number" name="phoneNumber" id="phoneNumber">
+        Phone Number: <input type="number" name="phoneNumber" id="phoneNumber" required>
         <br>
-        Email: <input type="text" name= "email" id = "email">
+        Email: <input type="email" name= "email" id="email" required>
         <br>
         <input type="submit">
       </form>
