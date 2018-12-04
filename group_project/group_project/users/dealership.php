@@ -43,10 +43,12 @@ oci_execute($stid);
             <li class="nav-item active">
               <a class="nav-link" href="dealership.php"> Dealerships </a>
             </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="watchlist.php"> Watchlist </a>
-            </li>
-      <?php
+            <?php
+                  if(!$_SESSION['username'] == ''){
+                    echo "<li class=\"nav-item active\">";
+                    echo  "<a class=\"nav-link\" href=\"watchlist.php\"> Watchlist </a>";
+                    echo "</li>";
+                  }
               if(!$_SESSION['username'] == ''){
                 echo "<li class=\"nav-item active\">";
                 echo  "<a class=\"nav-link\" href=\"logout.php\"> Logout </a>";
