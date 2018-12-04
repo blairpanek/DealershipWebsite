@@ -13,9 +13,13 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="profile.php"> Profile </a>
-            </li>
+            <?php
+                  if(!$_SESSION['username'] == ''){
+                    echo "<li class=\"nav-item active\">";
+                    echo  "<a class=\"nav-link\" href=\"profile.php\"> Profile </a>";
+                    echo "</li>";
+                  }
+                  ?>
             <li class="nav-item active">
               <a class="nav-link" href="dealership.php"> Dealerships </a>
             </li>
@@ -41,7 +45,7 @@
 <hr />
     <form action="handle_login.php" method="get">
       Username: <input type="text" name="username"><br>
-      Password: <input type="text" name="password"><br>
+      Password: <input type="password" name="password" id="myInput"><br><br>
       <input type="submit">
     </form>
     <br>
