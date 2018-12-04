@@ -5,7 +5,7 @@ session_start();
 
   $dealership_id = $_GET["dealership_id"];
   $username = $_SESSION['username'];
-  $query = "SELECT Vehicles.*, UserVehicleWatchlist.Vehicle_ID, UserVehicleWatchlist.UserName FROM Vehicles INNER JOIN UserVehicleWatchlist ON Vehicles.Vehicle_ID = UserVehicleWatchlist.Vehicle_ID AND UserVehicleWatchlist.UserName='$username' AND Vehicles.Dealership_ID = $dealership_id WHERE Vehicles.Vehicle_ID IS NULL";
+  $query = "SELECT Vehicles.*, UserVehicleWatchlist.Vehicle_ID, UserVehicleWatchlist.UserName FROM Vehicles INNER JOIN UserVehicleWatchlist ON Vehicles.Vehicle_ID = UserVehicleWatchlist.Vehicle_ID AND UserVehicleWatchlist.UserName='$username' AND Vehicles.Dealership_ID = $dealership_id";
   $stid = oci_parse($conn, $query);
   oci_execute($stid);
 ?>
@@ -29,7 +29,6 @@ session_start();
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
