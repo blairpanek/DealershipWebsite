@@ -33,16 +33,22 @@ oci_execute($stid);
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="profile.php"> Profile </a>
-            </li>
+            <?php
+                  if(!$_SESSION['username'] == ''){
+                    echo "<li class=\"nav-item active\">";
+                    echo  "<a class=\"nav-link\" href=\"profile.php\"> Profile </a>";
+                    echo "</li>";
+                  }
+                  ?>
             <li class="nav-item active">
               <a class="nav-link" href="dealership.php"> Dealerships </a>
             </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="watchlist.php"> Watchlist </a>
-            </li>
-      <?php
+            <?php
+                  if(!$_SESSION['username'] == ''){
+                    echo "<li class=\"nav-item active\">";
+                    echo  "<a class=\"nav-link\" href=\"watchlist.php\"> Watchlist </a>";
+                    echo "</li>";
+                  }
               if(!$_SESSION['username'] == ''){
                 echo "<li class=\"nav-item active\">";
                 echo  "<a class=\"nav-link\" href=\"logout.php\"> Logout </a>";
