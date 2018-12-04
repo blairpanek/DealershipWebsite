@@ -5,6 +5,8 @@ session_start();
 
   $dealership_id = $_GET["dealership_id"];
   $username = $_SESSION['username'];
+  echo $dealership_id;
+  echo $username;
   $query = "SELECT Vehicles.*, UserVehicleWatchlist.Vehicle_ID, UserVehicleWatchlist.UserName FROM Vehicles INNER JOIN UserVehicleWatchlist ON Vehicles.Vehicle_ID = UserVehicleWatchlist.Vehicle_ID AND UserVehicleWatchlist.UserName='$username' AND Vehicles.Dealership_ID = $dealership_id";
   $stid = oci_parse($conn, $query);
   oci_execute($stid);
