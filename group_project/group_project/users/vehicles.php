@@ -84,10 +84,15 @@ session_start();
               echo 'Price: '   . $row[6];
               echo '<br />';
               echo '<br />';
+              if(!$_SESSION['username'] == ''){
               echo "<a class=\"btn btn-primary\" href=\"handle_add_to_watchlist.php?dealership_id=$dealership_id&username=$username&vehicle_id=$vehicle_id\" role=\"button\"> Add to Watchlist </a>";
-            echo '</div>';
-            echo "<div class=\"mb-4\"> </div>";
-            echo '<hr />';
+
+
+              }
+              echo '</div>';
+              echo "<div class=\"mb-4\"> </div>";
+              echo '<hr />';
+
         }
       ?>
     </div>
