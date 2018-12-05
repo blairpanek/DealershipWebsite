@@ -8,6 +8,7 @@ session_start();
   $innerJoinQuery = "SELECT Vehicles.* From (Vehicles INNER JOIN UserVehicleWatchlist ON Vehicles.Vehicle_ID = UserVehicleWatchlist.Vehicle_ID AND UserVehicleWatchlist.UserName = $username)";
   $query = "SELECT Vehicles.* FROM (Vehicles EXCEPT $innerJoinQuery) WHERE Vehicles.Dealership_ID = $dealership_id";
   $stid = oci_parse($conn, $query);
+  echo $stid;
   oci_execute($stid);
 ?>
 
