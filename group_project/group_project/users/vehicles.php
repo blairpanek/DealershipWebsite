@@ -7,7 +7,7 @@ session_start();
   $username = $_SESSION['username'];
   $unionQuery = "SELECT Vehicles.* FROM Vehicles INNER JOIN UserVehicleWatchlist ON UserVehicleWatchlist.Vehicle_ID = Vehicles.Vehicle_ID AND UserVehicleWatchlist.UserName = $username";
   $query = "SELECT Vehicles.* FROM Vehicles EXCEPT $unionQuery WHERE Vehicles.Dealership_ID = $dealership_id";
-  $query = "SELECT Vehicle.* FROM (Vehicles INNER JOIN UserVehicleWatchlist ON UserVehicleWatchlist.UserName = $username AND NOT UserVehicleWatchlist.Vehicle_ID = Vehicles.Vehicle_ID) WHERE Vehicles.Dealership_ID = $dealership_id";
+  $query = "SELECT Vehicles.* FROM (Vehicles INNER JOIN UserVehicleWatchlist ON UserVehicleWatchlist.UserName = $username AND NOT UserVehicleWatchlist.Vehicle_ID = Vehicles.Vehicle_ID) WHERE Vehicles.Dealership_ID = $dealership_id";
   //$query = "SELECT Vehicles.* FROM Vehicles EXCEPT '$innerJoinQuery'  WHERE Vehicles.Dealership_ID = $dealership_id";
 
   $stid = oci_parse($conn, $query);
