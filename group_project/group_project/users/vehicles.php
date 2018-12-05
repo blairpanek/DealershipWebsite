@@ -9,9 +9,9 @@ session_start();
   $query = "SELECT Vehicles.* FROM (Vehicles EXCEPT $innerJoinQuery) WHERE Vehicles.Dealership_ID = $dealership_id";
   $stid = oci_parse($conn, $query);
 
-  $something = oci_execute($stid);
+  oci_execute($stid);
 
-  echo $something;
+
 ?>
 
 <html lang="en" dir="ltr">
@@ -72,6 +72,7 @@ session_start();
     <div class="container">
       <?php
         while (($row = oci_fetch_array($stid, OCI_BOTH)) != false) {
+            echo $row;
             echo "<div class=\"mt-4\"> </div>";
             echo "<div class=\"card p-5 shadow-lg\">";
               $vehicle_id = $row[0];
