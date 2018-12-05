@@ -5,7 +5,7 @@ session_start();
 
   $dealership_id = $_GET["dealership_id"];
   $username = $_SESSION['username'];
-  $query = "SELECT Vehicles.* FROM Vehicles EXCEPT SELECT Vehicles.* FROM  UserVehicleWatchlist";
+  $query = "SELECT Vehicles.* FROM Vehicles WHERE Vehicles.Dealership_ID = $dealership_id EXCEPT SELECT Vehicles.* FROM UserVehicleWatchlist";
   $stid = oci_parse($conn, $query);
   oci_execute($stid);
 ?>
