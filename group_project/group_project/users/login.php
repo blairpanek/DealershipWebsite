@@ -14,37 +14,36 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <?php
-                  if(!$_SESSION['username'] == ''){
-                    echo "<li class=\"nav-item active\">";
-                    echo  "<a class=\"nav-link\" href=\"profile.php\"> Profile </a>";
-                    echo "</li>";
-                  }
-                  ?>
+              if(!$_SESSION['username'] == ''){
+                echo "<li class=\"nav-item active\">";
+                echo  "<a class=\"nav-link\" href=\"profile.php\"> Profile </a>";
+                echo "</li>";
+              }
+            ?>
             <li class="nav-item active">
               <a class="nav-link" href="dealership.php"> Dealerships </a>
             </li>
             <?php
-                  if(!$_SESSION['username'] == ''){
-                    echo "<li class=\"nav-item active\">";
-                    echo  "<a class=\"nav-link\" href=\"watchlist.php\"> Watchlist </a>";
-                    echo "</li>";
-                  }
               if(!$_SESSION['username'] == ''){
+                echo "<li class=\"nav-item active\">";
+                echo  "<a class=\"nav-link\" href=\"watchlist.php\"> Watchlist </a>";
+                echo "</li>";
+              }
+              if (!$_SESSION['username'] == '') {
                 echo "<li class=\"nav-item active\">";
                 echo  "<a class=\"nav-link\" href=\"logout.php\"> Logout </a>";
                 echo "</li>";
-              }
-              else{
+              } else {
                 echo "<li class=\"nav-item active\">";
                 echo  "<a class=\"nav-link\" href=\"login.php\"> Login </a>";
                 echo "</li>";
               }
-?>
-</ul>
-</div>
-</nav>
+            ?>
+          </ul>
+        </div>
+      </nav>
 
-<hr />
+      <hr />
     <form action="handle_login.php" method="get">
       Username: <input type="text" name="username" required><br>
       Password: <input type="password" name="password" id="myInput" required><br><br>
