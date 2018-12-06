@@ -5,7 +5,9 @@ session_start();
 
   $dealership_id = $_GET["dealership_id"];
   $username = $_SESSION['username'];
-  //$query = "SELECT Vehicles.*, UserVehicleWatchlist.Vehicle_ID, UserVehicleWatchlist.UserName FROM (Vehicles LEFT JOIN UserVehicleWatchlist ON UserVehicleWatchlist.UserName='$username' AND NOT UserVehicleWatchlist.Vehicle_ID = Vehicles.Vehicle_ID) WHERE Vehicles.Dealership_ID = $dealership_id";
+
+  // $query = "SELECT Vehicles.* FROM Vehicles WHERE (Vehicle_ID NOT IN (SELECT Vehicle_ID FROM UserVehicleWatchlist)) OR (NOT EXISTS (SELECT UserVehicleWatchlist.Vehicle_ID FROM UserVehicleWatchlist))";
+
   $query = "SELECT * FROM Vehicles WHERE dealership_id = " . $dealership_id;
   $stid = oci_parse($conn, $query);
   oci_execute($stid);
