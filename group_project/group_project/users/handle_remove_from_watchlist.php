@@ -20,6 +20,7 @@ oci_execute($stid);
 oci_free_statement($stid);
 oci_close($conn);
 
+header('Location: watchlist.php');
 ?>
 
 <html lang="en" dir="ltr">
