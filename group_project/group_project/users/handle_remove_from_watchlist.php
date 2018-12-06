@@ -8,7 +8,6 @@ $username = $_SESSION['username'];
 $vehicle_id = $_GET["vehicle_id"];
 
 $combination_id = $vehicle_id . $username . $dealership_id;
-echo $combination_id;
 
 $query = "DELETE FROM UserVehicleWatchlist WHERE UserVehicleWatchlist_ID='$combination_id'";
 echo $query;
